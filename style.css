@@ -1,0 +1,119 @@
+/* Reset and base styles */
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #1e88e5; /* blue */
+  --danger: #e53935; /* red */
+  --muted: #6b7280;
+  --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #305f94 0%, var(--bg) 100%);
+  color:#263238;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+}
+
+/* Page wrapper to center content */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* Add button / link */
+a.add-button{
+  display:inline-block;
+  background:linear-gradient(180deg,var(--accent),#1565c0);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(30,136,229,0.12);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+a.add-button:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(30,136,229,0.14)}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+/* Header (judul kolom) */
+th {
+  background: linear-gradient(180deg, var(--accent), #1565c0);
+  color: #fff;
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 1em;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* Isi tabel */
+td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #e0e6ed;
+  font-size: 0.97em;
+  color: #374151;
+}
+
+/* Warna baris bergantian */
+tr:nth-child(even) {
+  background-color: #f9fbff;
+}
+
+/* Hover efek */
+tr:hover {
+  background-color: rgba(30,136,229,0.08);
+  transition: background 0.2s ease;
+}
+
+/* Tombol UPDATE dan DELETE */
+td a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+  margin-right: 6px;
+}
+
+/* Tombol Update */
+td a[href*="update.php"] {
+  background: linear-gradient(180deg, #43a047, #2e7d32);
+}
+td a[href*="update.php"]:hover {
+  background: #1b5e20;
+}
+
+/* Tombol Delete */
+td a[href*="delete.php"] {
+  background: linear-gradient(180deg, var(--danger), #c62828);
+}
+td a[href*="delete.php"]:hover {
+  background: #b71c1c;
+}
+
+/* Responsif di layar kecil */
+@media (max-width: 700px) {
+  table, th, td {
+    font-size: 0.85em;
+  }
+  td, th {
+    padding: 10px;
+  }
+}
